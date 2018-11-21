@@ -1,3 +1,39 @@
+# Making a hash of arrays...
+
+Homework to perform various functions and actions on arrays and hashes.
+
+### Assumptions
+That these requests were to isolated and specific to engineer a method to complete so I have just provided the commands to provide the desired results.
+
+## Excercise A
+#### Create Array
+stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
+#### Add "Edinburgh Waverley" to end
+stops.push("Edinburgh Waverley")
+#### Add "Glasgow Queen St" to start
+stops.unshift("Glasgow Queen St")
+#### Insert "Polmont" at index 4 (Array Position 5)
+stops.insert(4, "Polmont")
+#### Get index of "Linlithgow"
+p stops.index("Linlithgow")
+#### Get index of "Cumbernauld"
+p stops.index("Cumbernauld")
+#### Delete at index of "Cumbernauld"
+stops.delete_at(stops.index("Cumbernauld"))
+#### Ways of outputting "Falkirk High"
+p stops[2]
+p stops[stops.index("Falkirk High")]
+p stops[-6]
+p stops.values_at(2)
+p stops.select {|var| var == "Falkirk High"}
+#### Reverse the stops
+p stops.reverse!
+#### Use a for loop to output the stops
+for stop in stops
+  p stop
+end
+
+## Excercise B
 
 #### Create a hash of users details...
 users = {
@@ -86,3 +122,47 @@ users["Mark"] = {:twitter => "markm",
                           }
 #### Display all users details...
 p users
+
+
+
+
+## Excercise C
+
+#### Create country hash...
+united_kingdom = [
+  {
+    name: "Scotland",
+    population: 5295000,
+    capital: "Edinburgh"
+  },
+  {
+    name: "Wales",
+    population: 3063000,
+    capital: "Swansea"
+  },
+  {
+    name: "England",
+    population: 53010000,
+    capital: "London"
+  }
+]
+#### Change Wales' capital to "Cardiff"
+p united_kingdom[1][:capital] = "Cardiff"
+#### Push NI to the hash with details...
+p united_kingdom << {
+    name: "Northern Ireland",
+    population: 1811000,
+    capital: "Belfast"
+  }
+#### Calculate the population of the UK by interrogating the above hashes,
+#### also output each countries' name.
+population = 0
+for countries in united_kingdom
+  p countries[:name]
+  population += countries[:population]
+end
+#### Output the population...
+p "The population of the UK is #{population}"
+
+## Credits
+Mark Mackay.
